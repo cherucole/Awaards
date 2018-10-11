@@ -20,7 +20,7 @@
    </div>
 
    <div class="row">
-     <p>Posted {{post.pub_date|timesince}} by {{post.user_profile.username}}</p>
+     <p>Posted {{post.date|timesince}} ago by  <a href="/accounts/profile/{{post.user_profile.username}}">{{post.user_profile.username}}</p></a>
    </div>
 
  </div>
