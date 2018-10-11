@@ -87,21 +87,21 @@ def add_profile(request):
     return render(request, 'images/new_profile.html', {"form": form})
 
 
-@login_required(login_url='/accounts/login/')
-def search_results(request):
-    current_user = request.user
-    if 'username' in request.GET and request.GET["username"]:
-        search_term = request.GET.get("username")
-        profiles = Profile.find_profile(search_term)
-        message = search_term
-
-        return render(request,'images/search_profile.html',{"message":message,
-                                             "profiles":profiles,
-                                             "user":current_user,
-                                             "username":profiles})
-    else:
-        message = "You haven't searched for any user"
-        return render(request,'images/search_profile.html',{"message":message})
+# @login_required(login_url='/accounts/login/')
+# def search_results(request):
+#     current_user = request.user
+#     if 'username' in request.GET and request.GET["username"]:
+#         search_term = request.GET.get("username")
+#         profiles = Profile.find_profile(search_term)
+#         message = search_term
+#
+#         return render(request,'images/search_profile.html',{"message":message,
+#                                              "profiles":profiles,
+#                                              "user":current_user,
+#                                              "username":profiles})
+#     else:
+#         message = "You haven't searched for any user"
+#         return render(request,'images/search_profile.html',{"message":message})
 
 
 
