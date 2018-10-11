@@ -114,18 +114,26 @@ def like(request,operation,pk):
 
 @login_required(login_url='/accounts/login/')
 def rate_post(request,pk):
+    [design, usability, content]=[[0],[0],[0]]
+
     image = get_object_or_404(Post, pk=pk)
     current_user = request.user
     if request.method == 'POST':
-        form = CommentForm(request.POST)
+        form = RatingsForm(request.POST)
         if form.is_valid():
-            comment = form.save(commit=False)
-            comment.imagecommented = image
-            comment.poster = current_user
-            comment.save()
+            values = form.save(commit=False)
+            design=values.design
+            usability=values.usability
+            content=values.content
+
+            # print (values, values.design)
+
+            values.save()
+            print (values, values.design, design)
+
             return redirect('homepage')
     else:
-        form = CommentForm()
+        form = RatingsForm()
         return render(request,'comment.html',{"user":current_user,"comment_form":form})
 
 def search_results(request):
