@@ -144,3 +144,20 @@ def search_results(request):
     else:
         message = "Please enter a search term"
         return render(request, 'search.html',{"message":message})
+
+def get_individual_post(request, post_id):
+
+    try:
+        post = Post.objects.get(id=post_id)
+    except DoesNotExist:
+        raise Http404()
+    return render (request, 'post.html', {'post':post, 'post_id': post.id})
+
+
+
+# def article(request, article_id):
+#     try:
+#         article = Article.objects.get(id=article_id)
+#     except DoesNotExist:
+#         raise Http404()
+#     return render(request, 'all-news/article.html', {'article': article, 'article_id': article.id})
