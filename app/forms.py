@@ -10,6 +10,7 @@ class RatingsForm(forms.ModelForm):
         model = Ratings
         exclude = ['poster', 'post_rated', 'score']
 
+
 class NewProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
