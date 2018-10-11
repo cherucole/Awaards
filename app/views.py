@@ -13,19 +13,15 @@ from .forms import *
 from .email import *
 
 # Create your views here.
-def welcome(request):
-    message= "take one test"
-    return render (request, 'index.html', {"message":message})
-
 
 @login_required(login_url='/accounts/login/')
 def homepage(request):
     posts = Post.all_posts()
     profile = Profile.get_all_profiles()
-    comments=Comment.objects.all()
+    ratings=Ratings.objects.all()
     current_user = request.user
     if request.method == 'POST':
-        form = CommentForm(request.POST, request.FILES)
+        form = RatingsForm(request.POST, request.FILES)
 
         if form.is_valid():
             comment = form.save(commit=False)
@@ -34,18 +30,18 @@ def homepage(request):
         return redirect('homepage')
 
     else:
-        form=CommentForm
+        form=RatingsForm
     context =  {
         "profile": profile,
         "form": form,
         "posts":posts ,
-        "comments":comments,
+        "ratings":ratings,
     }
     return render(request, 'index.html', context)
 
 
 @login_required(login_url='/accounts/login/')
-def upload_image(request):
+def add_post(request):
     current_user = request.user
     if request.method == 'POST':
         form = UploadForm(request.POST, request.FILES)
@@ -117,7 +113,7 @@ def like(request,operation,pk):
 
 
 @login_required(login_url='/accounts/login/')
-def add_comment(request,pk):
+def rate_post(request,pk):
     image = get_object_or_404(Post, pk=pk)
     current_user = request.user
     if request.method == 'POST':
