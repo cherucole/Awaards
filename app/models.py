@@ -6,8 +6,9 @@ import datetime as dt
 # Create your models here.
 
 class Profile(models.Model):
-    bio = HTMLField()
     avatar = models.ImageField(upload_to='images/', blank=True)
+    bio = HTMLField()
+    contact = HTMLField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)
 
     def save_profile(self):
@@ -46,6 +47,11 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     @classmethod
+    def search_by_name(cls,search_term):
+        posts = cls.objects.filter(name__icontains=search_term)
+        return posts
+
+    @classmethod
     def one_post(cls, id):
         post=Post.objects.filter(id=id)
         return post
@@ -77,10 +83,10 @@ class Post(models.Model):
         return profile
 
 class Ratings(models.Model):
-    design=models.IntegerField(default=0)
-    usability=models.IntegerField(default=0)
-    content=models.IntegerField(default=0)
-    score=models.IntegerField(default=0)
+    design=models.IntegerField(default=0, blank=True)
+    usability=models.IntegerField(default=0, blank=True)
+    content=models.IntegerField(default=0, blank=True)
+    score=models.IntegerField(default=0, blank=True)
     poster = models.ForeignKey(User,on_delete=models.CASCADE, blank=True)
     post_rated = models.ForeignKey(Post,on_delete=models.CASCADE, related_name='ratings',null=True)
 
@@ -100,21 +106,3 @@ class Ratings(models.Model):
 #     def __str__(self):
 #         return self.comment
 
-class Likes(models.Model):
-	post = models.IntegerField()
-	liker = models.CharField(max_length=20)
-
-
-class Follow(models.Model):
-    users = models.ManyToManyField(User, related_name='follow')
-    current_user = models.ForeignKey(User, related_name='c_user', null=True)
-
-    @classmethod
-    def follow(cls, current_user, new):
-        friends, created = cls.objects.get_or_create(current_user=current_user)
-        friends.users.add(new)
-
-    @classmethod
-    def unfollow(cls, current_user, new):
-        friends, created = cls.objects.get_or_create(current_user=current_user)
-        friends.users.remove(new)

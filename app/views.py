@@ -132,11 +132,15 @@ def add_comment(request,pk):
         form = CommentForm()
         return render(request,'comment.html',{"user":current_user,"comment_form":form})
 
-def follow(request,operation,id):
-    user=User.objects.get(id=id)
-    if operation=='follow':
-        Follow.follow(request.user,user)
-        return redirect('homepage')
-    elif operation=='unfollow':
-        Follow.unfollow(request.user,user)
-        return redirect('homepage')
+def search_results(request):
+
+    if 'post' in request.GET and request.GET["post"]:
+        search_term = request.GET.get("post")
+        posts_results = Post.search_by_name(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"posts": posts_results})
+
+    else:
+        message = "Please enter a search term"
+        return render(request, 'search.html',{"message":message})
