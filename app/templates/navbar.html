@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #fff;" style="font-size: 25px" height="50px">
+               <a href="{% url 'homepage' %}" style="color:black;"><i class="fab fa-instagram fa-3x " height="50px"></i></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+<li>
+    <a href="{% url 'homepage' %}"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" width="130px" height="50px" alt="INSTAGRAM" style="margin-right:4em;margin-left:2em;"></a>
+</li>
+
+      <li>
+                                      <a href="{% url 'add_profile' %}"> <img src="https://image.flaticon.com/icons/png/512/184/184312.png" width="45px" height="45px" alt="INSTAGRAM" style="color:black;">Add Profile</a>
+
+
+      </li>
+      <li>
+                            <a href="{% url 'upload' %}"> <img src="https://static.thenounproject.com/png/809337-200.png" width="45px" height="45px" style="margin-right:2em;margin-left:1.5em;" alt="INSTAGRAM" style="color:black;"></a>
+
+
+      </li>
+
+
+
+
+
+
+
+    <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}" method="get">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="username">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+            </ul>
+
+
+                  <a href="{% url 'my_profile' username=user %}"> <img src="https://dumielauxepices.net/sites/default/files/person-icons-android-712078-6629135.png" width="45px" height="45px" alt="INSTAGRAM" style="color:black;">{{user.username}}</a>
+
+                                  <a href="/logout"> <img src="https://www.shareicon.net/download/2015/10/17/657490_arrow.svg" width="45px" height="45px" style="margin-right:2em;margin-left:1.5em;" alt="INSTAGRAM" style="color:black;"></a>
+
+
+  </div>
+</nav>
+
+       {% block scripts %}
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    {% endblock %}
+</body>
+</html>
