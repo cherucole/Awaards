@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8e6f632-667d-423e-9528-62c1fcaea48c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/post.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,13 +44,13 @@
           <entry key="Procfile" value="7" />
           <entry key="env" value="14" />
           <entry key="gitignore" value="21" />
-          <entry key="html" value="316" />
+          <entry key="html" value="324" />
           <entry key="py" value="600" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="316" />
+          <entry key="HTML" value="324" />
           <entry key="PLAIN_TEXT" value="42" />
           <entry key="Python" value="600" />
         </counts>
@@ -122,8 +121,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="353">
+              <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -318,11 +317,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.22986823" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.22986823" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -557,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="353">
+          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
         </state>
       </provider>
     </entry>
