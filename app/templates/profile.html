@@ -1,0 +1,87 @@
+{%extends 'base.html'%}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4 %}
+<br>
+<br>
+<div class="container">
+
+  <div class="row">
+
+  <div class="col-md-4">
+
+        <div class="card border-secondary">
+                <div class="card-footer">
+
+      <img class="rounded-circle img-responsive" width="170" height="170" src="{{profile_info.avatar.url}}" size="">
+                    <br>
+
+
+                             <br>
+
+                          <p style="width:100%; padding-left:6px;">{{profile_info.user | upper}}</p>
+
+
+                                <div style="width:100%; padding-left:20px;padding-top:10px;" class="row">
+
+
+
+                 <p style="width:100%; padding-left:6px;">{{posts | length }} posts</p>
+                                    <br>
+      <p style="margin-top:0px;">{{profile_info.bio | safe}}</p>
+
+            </div>
+
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col-lg-8 col-md-10 mx-auto">
+
+
+  <div class="card-columns " >
+      <div class="card border-light"  >
+      {% for post in posts %}
+
+                  <div class="header"><img class="img-circle" src="{{image.user_profile.avater.url}}">
+            </div>
+
+  <div class="card border-secondary" style="width:240%;">
+    <a href="{% url 'profile' username=post.user_profile.username %}">
+    <label>{{post.user_profile.username}}</label></a>
+
+
+
+
+
+    <img class="card-img-top" src="{{post.image.url}}" class="img-responsive" alt="Image" size="100px200" type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image.id}}">
+<hr>
+<div style="width:100%; padding-left:20px;">
+  <p style="width:100%; padding-left:20px;">{{post.description | safe}}</p>
+
+</div>
+
+
+
+
+
+
+  </div>
+
+
+      {% empty %}
+  <div class="row">
+    <h2 class="text-center">There are no posts here</h2>
+  </div>
+      {% endfor %}
+          </div>
+
+  </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
