@@ -129,7 +129,7 @@ def rate_post(request,pk):
             # print (values, values.design)
 
             values.save()
-            print (values, values.design, design)
+            print (values.design, values.usability, values.content)
 
             return redirect('homepage')
     else:
