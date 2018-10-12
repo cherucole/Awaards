@@ -154,7 +154,7 @@ def rate_post(request,pk):
             print (design_avg/len(post_design_ratings))
             design_score= (design_avg/len(post_design_ratings))
 
-            return redirect('homepage', {"design_score":design_score})
+            return redirect('homepage')
     else:
         form = RatingsForm()
         return render(request,'index.html',{"user":current_user,"ratings_form":form})
@@ -173,12 +173,39 @@ def search_results(request):
         return render(request, 'search.html',{"message":message})
 
 def get_individual_post(request, post_id):
+    post = Post.objects.get(id=post_id)
+    profile = Profile.get_all_profiles()
+    ratings = Ratings.objects.all()
+    current_user = request.user
+    if request.method == 'POST':
+        form = RatingsForm(request.POST, request.FILES)
 
-    try:
-        post = Post.objects.get(id=post_id)
-    except DoesNotExist:
-        raise Http404()
-    return render (request, 'post.html', {'post':post, 'post_id': post.id})
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = current_user
+            comment.save()
+        return redirect('homepage')
+
+    else:
+        form = RatingsForm
+    context = {
+        "profile": profile,
+        "form": form,
+        "post": post,
+        "ratings": ratings,
+    }
+    return render (request, 'post.html', {'post':post, 'post_id': post.id, "form": form})
+
+
+    #
+    #
+    # form=RatingsForm
+    # try:
+    #     post = Post.objects.get(id=post_id)
+    #
+    # except DoesNotExist:
+    #     raise Http404()
+    # return render (request, 'post.html', {'post':post, 'post_id': post.id, "ratings_form": form})
 
 # def get_score (request, post_id):
 #     post = get_object_or_404(Post, pk=pk)

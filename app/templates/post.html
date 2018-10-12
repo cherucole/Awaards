@@ -1,6 +1,8 @@
 {%extends 'base.html'%}
-
- {% block content %}
+{% load bootstrap4 %}
+{% block content %}
+{{ block.super}}
+{% load staticfiles %}
 
  <div class="container">
 
@@ -27,6 +29,22 @@
      <div>
          <a href="{{post.live_link}}" target="_blank"> <p>view live project</p></a>
    </div>
+          {{form.media}}
+
+                    <form style="width:100%; padding-left:20px;padding-right:20px;" action="{%url 'rate_post' pk=post.id%}" method="post" enctype="multipart/form-data">
+                      {%csrf_token%}
+
+                      {% bootstrap_form form%}
+    <input type="submit" value="Submit" class="btn btn-success">
+
+                    </form>
+
+               {% block scripts %}
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+              {% bootstrap_javascript %}
+            {% endblock %}
+
 
  </div>
 
