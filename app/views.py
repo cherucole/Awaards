@@ -152,12 +152,12 @@ def rate_post(request,pk):
             for value in post_design_ratings:
                 design_avg += value
             print (design_avg/len(post_design_ratings))
+            design_score= (design_avg/len(post_design_ratings))
 
-
-            return redirect('homepage')
+            return redirect('homepage', {"design_score":design_score})
     else:
         form = RatingsForm()
-        return render(request,'comment.html',{"user":current_user,"comment_form":form})
+        return render(request,'index.html',{"user":current_user,"ratings_form":form})
 
 def search_results(request):
 
@@ -179,6 +179,9 @@ def get_individual_post(request, post_id):
     except DoesNotExist:
         raise Http404()
     return render (request, 'post.html', {'post':post, 'post_id': post.id})
+
+# def get_score (request, post_id):
+#     post = get_object_or_404(Post, pk=pk)
 
 
 
