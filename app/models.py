@@ -57,12 +57,10 @@ class Post(models.Model):
         post=Post.objects.filter(id=id)
         return post
 
-
     @classmethod
     def all_posts(cls):
         posts = cls.objects.all()
         return posts
-
 
     @classmethod
     def get_user_posts(cls, profile_id):

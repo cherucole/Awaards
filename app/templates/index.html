@@ -36,6 +36,15 @@
         <a style="width:100%; padding-left:20px;" href="{% url 'profile' username=post.user_profile.username %}">
 
         <label>{{post.user_profile.username}}</label></a>
+                  <p>{{post.ratings.count}}</p>
+                  {% for rating in post.ratings.all %}
+
+                            <p>{{rating.score}}</p>
+
+                  {% endfor %}
+
+
+
         <img src="{{post.image.url}}" alt=""  class="card-img-top img-responsive" alt="Image" style="height:600px;width:100%;">
         <br>
 
