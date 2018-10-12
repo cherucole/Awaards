@@ -116,20 +116,35 @@ def like(request,operation,pk):
 def rate_post(request,pk):
     [design, usability, content]=[[0],[0],[0]]
 
-    image = get_object_or_404(Post, pk=pk)
+    post = get_object_or_404(Post, pk=pk)
     current_user = request.user
     if request.method == 'POST':
         form = RatingsForm(request.POST)
+        [design, usability, content] = [[0], [0], [0]]
+
         if form.is_valid():
-            values = form.save(commit=False)
-            design=values.design
-            usability=values.usability
-            content=values.content
+            form.save()
+            rating = Ratings.objects.last()
+            design=rating.design
+            usability=rating.usability
+            content=rating.content
+            rating.post_rated = post
+            rating.save()
 
-            # print (values, values.design)
 
-            values.save()
-            print (values.design, values.usability, values.content)
+            print (design, usability, content)
+
+            # design_all=Ratings.objects.all()
+            # for rating in design_all:
+            #     print (rating.design)
+
+
+# *********************************************
+            post = Post.objects.last()
+            post_ratings = Ratings.objects.filter(post_rated=post)
+            post_design_ratings = [pr.design for pr in post_ratings]
+            print (post_ratings.all())
+
 
             return redirect('homepage')
     else:
