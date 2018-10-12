@@ -37,9 +37,10 @@
 
         <label>{{post.user_profile.username}}</label></a>
                   <p>{{post.ratings.count}}</p>
-                  {% for rating in post.ratings.all %}
-
+                  {% for rating in post.ratings.all%}
+          {% if forloop.counter is post.ratings.all.count %}
                             <p>{{rating.score}}</p>
+          {% endif %}
 
                   {% endfor %}
 

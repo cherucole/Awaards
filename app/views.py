@@ -31,7 +31,9 @@ def homepage(request):
     #
     # else:
     #     form=RatingsForm
+    # last = len(posts.ratings.all())
     context =  {
+        # 'last':last,
         "profile": profile,
         # "form": form,
         "posts":posts ,
