@@ -80,7 +80,7 @@ def add_profile(request):
 
     else:
         form = NewProfileForm()
-    return render(request, 'images/new_profile.html', {"form": form})
+    return render(request, 'new_profile.html', {"form": form})
 
 
 # @login_required(login_url='/accounts/login/')
