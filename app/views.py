@@ -20,20 +20,20 @@ def homepage(request):
     profile = Profile.get_all_profiles()
     ratings=Ratings.objects.all()
     current_user = request.user
-    if request.method == 'POST':
-        form = RatingsForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.user = current_user
-            comment.save()
-        return redirect('homepage')
-
-    else:
-        form=RatingsForm
+    # if request.method == 'POST':
+    #     form = RatingsForm(request.POST, request.FILES)
+    #
+    #     if form.is_valid():
+    #         comment = form.save(commit=False)
+    #         comment.user = current_user
+    #         comment.save()
+    #     return redirect('homepage')
+    #
+    # else:
+    #     form=RatingsForm
     context =  {
         "profile": profile,
-        "form": form,
+        # "form": form,
         "posts":posts ,
         "ratings":ratings,
     }
@@ -195,7 +195,6 @@ def get_individual_post(request, post_id):
         "ratings": ratings,
     }
     return render (request, 'post.html', {'post':post, 'post_id': post.id, "form": form})
-
 
     #
     #
