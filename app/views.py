@@ -164,7 +164,7 @@ def rate_post(request,pk):
 
             score =(design_score + usability_score + content_score)/3
 
-            score =rating.score
+            rating.score =score
             rating.save()
 
             print ("this is overall score: " + str(score))
