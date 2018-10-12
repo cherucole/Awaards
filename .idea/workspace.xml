@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8e6f632-667d-423e-9528-62c1fcaea48c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +26,7 @@
           <entry key="css" value="1" />
           <entry key="env" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="html" value="16" />
+          <entry key="html" value="17" />
           <entry key="js" value="1" />
           <entry key="py" value="15" />
           <entry key="txt" value="3" />
@@ -33,7 +35,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="HTML" value="16" />
+          <entry key="HTML" value="17" />
           <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="15" />
@@ -45,41 +47,20 @@
           <entry key="env" value="14" />
           <entry key="gitignore" value="21" />
           <entry key="html" value="506" />
-          <entry key="py" value="1824" />
+          <entry key="py" value="1878" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="506" />
           <entry key="PLAIN_TEXT" value="42" />
-          <entry key="Python" value="1824" />
+          <entry key="Python" value="1878" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/navbar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-32">
-              <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-              <folding>
-                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#1;n#img#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#1;n#img#0;n#a#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,18 +73,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="169" column="25" selection-start-line="169" selection-start-column="25" selection-end-line="169" selection-end-column="25" />
+            <state relative-caret-position="180">
+              <caret line="192" selection-start-line="192" selection-end-line="193" selection-end-column="39" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
-                <marker date="1539348354862" expanded="true" signature="7018:7019" ph="..." />
-                <marker date="1539348354862" expanded="true" signature="7018:7042" ph="..." />
-                <marker date="1539348354862" expanded="true" signature="7018:7053" ph="..." />
-                <marker date="1539348354862" expanded="true" signature="7339:7342" ph="..." />
-                <marker date="1539348354862" expanded="true" signature="7341:7342" ph="..." />
+                <marker date="1539348864263" expanded="true" signature="7037:7038" ph="..." />
+                <marker date="1539348864263" expanded="true" signature="7037:7061" ph="..." />
+                <marker date="1539348864263" expanded="true" signature="7037:7072" ph="..." />
+                <marker date="1539348864263" expanded="true" signature="7358:7361" ph="..." />
+                <marker date="1539348864263" expanded="true" signature="7360:7361" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/upload.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -240,6 +233,7 @@
         <option value="$PROJECT_DIR$/app/urls.py" />
         <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/views.py" />
+        <option value="$PROJECT_DIR$/app/templates/upload.html" />
       </list>
     </option>
   </component>
@@ -291,13 +285,6 @@
             <path>
               <item name="Awaards" type="b2602c69:ProjectViewProjectNode" />
               <item name="Awaards" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="registration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Awaards" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Awaards" type="462c0819:PsiDirectoryNode" />
               <item name="Awaards" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -339,11 +326,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.58125913" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.5183016" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -586,15 +573,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="169" column="25" selection-start-line="169" selection-start-column="25" selection-end-line="169" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="192" selection-start-line="192" selection-end-line="193" selection-end-column="39" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
-            <marker date="1539348354862" expanded="true" signature="7018:7019" ph="..." />
-            <marker date="1539348354862" expanded="true" signature="7018:7042" ph="..." />
-            <marker date="1539348354862" expanded="true" signature="7018:7053" ph="..." />
-            <marker date="1539348354862" expanded="true" signature="7339:7342" ph="..." />
-            <marker date="1539348354862" expanded="true" signature="7341:7342" ph="..." />
+            <marker date="1539348864263" expanded="true" signature="7037:7038" ph="..." />
+            <marker date="1539348864263" expanded="true" signature="7037:7061" ph="..." />
+            <marker date="1539348864263" expanded="true" signature="7037:7072" ph="..." />
+            <marker date="1539348864263" expanded="true" signature="7358:7361" ph="..." />
+            <marker date="1539348864263" expanded="true" signature="7360:7361" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

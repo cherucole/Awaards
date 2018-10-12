@@ -53,7 +53,7 @@ def add_post(request):
 
     else:
         form = UploadForm()
-    return render(request, 'images/upload.html', {"form": form})
+    return render(request, 'upload.html', {"form": form})
 
 
 def profile(request, username):
@@ -169,7 +169,8 @@ def rate_post(request,pk):
             rating.score =score
             rating.save()
 
-            print ("this is overall score: " + str(score))
+            score=rating.score
+            print ("last score=" + str(score))
 
             return redirect('homepage')
     else:
