@@ -134,6 +134,8 @@ def rate_post(request,pk):
             content=rating.content
             rating.post_rated = post
             # rating.poster = current_user
+            rating.save()
+
 
             print (design, usability, content)
             post_ratings = Ratings.objects.filter(post_rated=post)
