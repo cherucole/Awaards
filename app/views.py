@@ -148,6 +148,10 @@ def rate_post(request,pk):
             post_ratings = Ratings.objects.filter(post_rated=post)
             post_design_ratings = [pr.design for pr in post_ratings]
             print (post_design_ratings)
+            design_avg=0
+            for value in post_design_ratings:
+                design_avg += value
+            print (design_avg/len(post_design_ratings))
 
 
             return redirect('homepage')
