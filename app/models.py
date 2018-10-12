@@ -88,7 +88,7 @@ class Ratings(models.Model):
     usability=models.IntegerField(default=0, blank=True)
     content=models.IntegerField(default=0, blank=True)
     score=models.IntegerField(default=0, blank=True)
-    poster = models.ForeignKey(User,on_delete=models.CASCADE, blank=True)
+    # poster = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
     post_rated = models.ForeignKey(Post,on_delete=models.CASCADE, related_name='ratings',null=True)
 
     def save_comment(self):

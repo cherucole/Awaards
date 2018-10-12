@@ -118,9 +118,13 @@ def rate_post(request,pk):
 
     post = get_object_or_404(Post, pk=pk)
     current_user = request.user
+    print (current_user)
+
+    print (current_user.id)
     if request.method == 'POST':
         form = RatingsForm(request.POST)
         [design, usability, content] = [[0], [0], [0]]
+        # current_user = request.user
 
         if form.is_valid():
             form.save()
@@ -129,6 +133,7 @@ def rate_post(request,pk):
             usability=rating.usability
             content=rating.content
             rating.post_rated = post
+            # rating.poster = current_user
             rating.save()
 
 
@@ -139,11 +144,10 @@ def rate_post(request,pk):
             #     print (rating.design)
 
 
-# *********************************************
-            post = Post.objects.last()
+# ********************************************
             post_ratings = Ratings.objects.filter(post_rated=post)
             post_design_ratings = [pr.design for pr in post_ratings]
-            print (post_ratings.all())
+            print (post_design_ratings)
 
 
             return redirect('homepage')
