@@ -136,15 +136,7 @@ def rate_post(request,pk):
             # rating.poster = current_user
             rating.save()
 
-
             print (design, usability, content)
-
-            # design_all=Ratings.objects.all()
-            # for rating in design_all:
-            #     print (rating.design)
-
-
-# ********************************************
             post_ratings = Ratings.objects.filter(post_rated=post)
             post_design_ratings = [pr.design for pr in post_ratings]
             print (post_design_ratings)
@@ -153,6 +145,26 @@ def rate_post(request,pk):
                 design_avg += value
             print (design_avg/len(post_design_ratings))
             design_score= (design_avg/len(post_design_ratings))
+
+            post_usability_ratings = [pr.usability for pr in post_ratings]
+            print (post_usability_ratings)
+            usability_avg=0
+            for value in post_usability_ratings:
+                usability_avg += value
+            print (usability_avg/len(post_usability_ratings))
+            usability_score= (usability_avg/len(post_usability_ratings))
+
+            post_content_ratings = [pr.content for pr in post_ratings]
+            print (post_content_ratings)
+            content_avg = 0
+            for value in post_content_ratings:
+                content_avg += value
+            print (content_avg / len(post_content_ratings))
+            content_score = (content_avg / len(post_content_ratings))
+
+
+            score =(design_score + usability_score + content_score)/3
+            print ("this is overall score: " + str(score))
 
             return redirect('homepage')
     else:
