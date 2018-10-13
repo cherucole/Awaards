@@ -82,9 +82,22 @@ class Post(models.Model):
         return profile
 
 class Ratings(models.Model):
-    design=models.IntegerField(default=0, blank=True)
-    usability=models.IntegerField(default=0, blank=True)
-    content=models.IntegerField(default=0, blank=True)
+    INPUT = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+    )
+
+    design=models.IntegerField(choices=INPUT, default=0, blank=True)
+    usability=models.IntegerField(choices=INPUT, blank=True)
+    content=models.IntegerField(choices=INPUT, blank=True)
     score=models.IntegerField(default=0, blank=True)
     # poster = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
     post_rated = models.ForeignKey(Post,on_delete=models.CASCADE, related_name='ratings',null=True)
