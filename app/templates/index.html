@@ -30,10 +30,10 @@
 
 
 
-  <div class="card-columns">
+  <div class="card-columns" >
     {% for post in posts%}
 
-    <div class="card border-secondary">
+    <div class="card border-secondary" style="height:470px">
       <div class="container" style="height:350px;width:100%;padding:0px;">
 
       <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" style="height:100%;">
@@ -45,11 +45,11 @@
 
       <div class="card-body">
         <h5 class="card-title">{{post.name}}</h5>
-        <p class="card-text">{{post.description | safe}}</p>
-        <p>By <a style="width:100%; padding-left:10px;" href="{% url 'profile' username=post.user_profile.username %}">
+        <!--<p class="card-text">{{post.description | safe}}</p>-->
+        <p style="margin-bottom:0;">By <a style="width:100%; padding-left:10px;" href="{% url 'profile' username=post.user_profile.username %}">
 
                 <label>{{post.user_profile.username}}</label></a></p>
-                          <p>Rating: {% for rating in post.ratings.all%}
+                          <p style="margin-top:0;">Rating: {% for rating in post.ratings.all%}
                           {% if forloop.counter is post.ratings.all.count %}
                                           {{rating.score}}
                           {% endif %}
