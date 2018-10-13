@@ -8,7 +8,10 @@ font-family: 'Slabo 27px', serif;
 
 }
 
+#date{
+    text-align: right;
 
+}
 
 .button1 {
     background-color: white;
