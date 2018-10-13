@@ -22,16 +22,17 @@
 </head>
 
 <body>
-<div class="container-fluid">
+<div class="container">
   <h1 id="mainheading" style="text-align:center; color:#0d47a1" class="display-4"> Awaards</h1>
 
 
-  {% for post in posts%}
 
 
 
 
   <div class="card-columns">
+    {% for post in posts%}
+
     <div class="card border-secondary">
       <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" size="100px180">
       <div class="card-body">
@@ -53,59 +54,17 @@
 </p>
       </div>
     </div>
-  </div>
-
-
-
-
-
-  {% endfor %}
-
-
-
-
-
-  <div class="row">
-
-    <div class="col-md-3"></div>
-
-    <div class="col-md-8" style="width:100%;">
-         {{design_score}}
-      {% for post in posts%}
-      <div class="card border-secondary" style="width:70%;">
-        <a style="width:100%; padding-left:20px;" href="{% url 'profile' username=post.user_profile.username %}">
-
-        <label>{{post.user_profile.username}}</label></a>
-                  <p>{{post.ratings.count}}</p>
-                  {% for rating in post.ratings.all%}
-          {% if forloop.counter is post.ratings.all.count %}
-                            <p>{{rating.score}}</p>
-          {% endif %}
-
-                  {% endfor %}
-
-
-
-        <img src="{{post.image.url}}" alt=""  class="card-img-top img-responsive" alt="Image" style="height:600px;width:100%;">
-        <br>
-
-<div style="width:100%; padding-left:20px;">
-  <p style="width:100%; padding-left:20px;">{{post.description | safe}}</p>
-
-    {{design_score}}     {{user}}
-
-    <a href="/post/{{post.id}}"> View full post</a>
-
-
-</div>
-
-      </div>
-      <br>
-      {% endfor%}
-
-    </div>
+    {% endfor %}
 
   </div>
+
+
+
+
+
+
+
+
 
 </div>
 </body>
