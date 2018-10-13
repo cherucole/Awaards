@@ -22,12 +22,21 @@
    </div>
 
    <div class="row">
-     <p>Posted {{post.date|timesince}} ago by  <a href="/accounts/profile/{{post.user_profile.username}}">{{post.user_profile.username}}</a></p>
+     <p>Posted on {{post.date|date}} by  <a href="/accounts/profile/{{post.user_profile.username}}">{{post.user_profile.username}}</a></p>
 
    </div>
 
      <div>
          <a href="{{post.live_link}}" target="_blank"> <p>view live project</p></a>
+         <p>Total ratings: {{post.ratings.count}}</p>
+         {% for rating in post.ratings.all%}
+ {% if forloop.counter is post.ratings.all.count %}
+                   <p> Score: {{rating.score}}</p>
+ {% endif %}
+
+         {% endfor %}
+
+
    </div>
           {{form.media}}
 

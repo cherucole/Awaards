@@ -36,10 +36,12 @@
       <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" size="100px180">
       <div class="card-body">
         <h5 class="card-title">{{post.name}}</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">{{post.description | safe}}</p>
         <p>Uploaded by         <a style="width:100%; padding-left:20px;" href="{% url 'profile' username=post.user_profile.username %}">
 
                 <label>{{post.user_profile.username}}</label></a></p>
+
+                <p>{{post.date|date}}</p>
 
                 <p>Rating:                   {% for rating in post.ratings.all%}
                           {% if forloop.counter is post.ratings.all.count %}
