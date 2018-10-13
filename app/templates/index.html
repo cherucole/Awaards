@@ -40,6 +40,13 @@
         <p>Uploaded by         <a style="width:100%; padding-left:20px;" href="{% url 'profile' username=post.user_profile.username %}">
 
                 <label>{{post.user_profile.username}}</label></a></p>
+
+                <p>Rating:                   {% for rating in post.ratings.all%}
+                          {% if forloop.counter is post.ratings.all.count %}
+                                          {{rating.score}}
+                          {% endif %}
+
+                                  {% endfor %}</p>
         <p>    <a href="/post/{{post.id}}"> View full post</a>
 </p>
       </div>
