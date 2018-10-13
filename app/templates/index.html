@@ -25,6 +25,37 @@
 <div class="container-fluid">
   <h1 id="mainheading" style="text-align:center; color:#0d47a1" class="display-4"> Awaards</h1>
 
+
+  {% for post in posts%}
+
+
+
+
+  <div class="card-columns">
+    <div class="card border-secondary">
+      <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" size="100px180">
+      <div class="card-body">
+        <h5 class="card-title">{{post.name}}</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p>Uploaded by         <a style="width:100%; padding-left:20px;" href="{% url 'profile' username=post.user_profile.username %}">
+
+                <label>{{post.user_profile.username}}</label></a></p>
+        <p>    <a href="/post/{{post.id}}"> View full post</a>
+</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  {% endfor %}
+
+
+
+
+
   <div class="row">
 
     <div class="col-md-3"></div>
