@@ -14,7 +14,7 @@ from .email import *
 
 # Create your views here.
 
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def homepage(request):
     posts = Post.all_posts()
     profile = Profile.get_all_profiles()

@@ -1,3 +1,9 @@
+#sidebuttons {
+  float: left;
+  color: white;
+}
+
+
 h1
 {
   font-family: 'Dancing Script', cursive;
@@ -102,7 +108,7 @@ font-family: 'Pacifico', cursive;
 }
 
 body {
-background-color: rgb(249, 249, 249);
+background-color: #ecf0f1;
 }
 
 
