@@ -56,18 +56,27 @@
 
 
   <div class="card border-secondary">
-    <a href="{% url 'profile' username=post.user_profile.username %}">
-    <label>{{post.user_profile.username}}</label></a>
+    <label>{{post.name | safe}}</label></a>
 
 
 
 
 
     <img class="card-img-top" src="{{post.image.url}}" class="img-responsive" alt="Image" type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{image.id}}">
+
+      <div class="middle">
+        <div class="button1 "><a id="text" style="color:white;" href="/post/{{post.id}}">view</a></div>
+      </div>
 <hr>
 <div style="width:100%; padding-left:20px;">
-  <p style="width:100%; padding-left:20px;">{{post.name | safe}}</p>
+<p id="text" style="margin-top:0;">Rating: {% for rating in post.ratings.all%}
+                          {% if forloop.counter is post.ratings.all.count %}
+                                          {{rating.score}}
+                          {% endif %}
 
+                              {% endfor %}
+
+                              </p>
 </div>
 
   </div>
