@@ -57,7 +57,7 @@ def add_post(request):
         form = UploadForm()
     return render(request, 'upload.html', {"form": form})
 
-
+@login_required(login_url='/accounts/login/')
 def profile(request, username):
     profile = User.objects.get(username=username)
     try:
