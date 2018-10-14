@@ -1,15 +1,20 @@
 {%extends 'base.html'%}
+{% load bootstrap4 %}
 {% block content %}
+{{ block.super}}
+{% load staticfiles %}
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <div class="container">
 <br>
 
     {% if posts%}
-      <h1 style="color:#0d47a1">Found {{ posts|length }} posts of searched term : {{message}}</h1>
+      <h1 id="text" style="color:white">Found {{ posts|length }} posts of searched term : {{message}}</h1>
 
     {% else %}
     <br>
 
-        <h1 style="color:#0d47a1"> Found 0 posts for the search term : {{message}}</h1>
+        <h1 id="text" style="color:white"> Found 0 posts for the search term : {{message}}</h1>
 
 
     {% endif %}
@@ -19,16 +24,24 @@
   {% if posts %}
       <div class="card-columns">
 
-    {% for post in posts %}  <div class="card border-secondary">
-          <a href="/post/{{post.id}}"><img class="card-img-top" src="{{post.image.url}}" class="img-responsive" alt="Image" size="100px200" type="button" class="btn btn-primary"></a>
+    {% for post in posts %}
 
+          <div class="card border-secondary">
+      <div class="container" style="height:350px;width:100%;padding:0px;">
+
+      <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" style="height:100%;">
+      <div class="middle">
+        <div class="button1 "><a id="text" style="color:white;" href="/post/{{post.id}}">View </a></div>
+      </div>
+
+    </div>
   </div>
 
 
 
       {% empty %}
   <div class="row">
-    <h2 class="text-center">There is no posts here</h2>
+    <h2 id="text" class="text-center">There is no posts here</h2>
   </div>
 
     {% endfor %}
