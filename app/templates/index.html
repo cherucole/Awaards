@@ -51,9 +51,9 @@
         <p id="text" style="margin-bottom:0;">By <a style="width:100%; padding-left:10px;" href="{% url 'profile' username=post.user_profile.username %}">
 
                 <label>{{post.user_profile.username}}</label></a></p>
-                          <p id="text" style="margin-top:0;">Rating: {% for rating in post.ratings.all%}
+                          <p id="text" style="margin-top:0;">Score: {% for rating in post.ratings.all%}
                           {% if forloop.counter is post.ratings.all.count %}
-                                          {{rating.score}}
+                                          {{rating.score}}/10
                           {% endif %}
 
                               {% endfor %}
