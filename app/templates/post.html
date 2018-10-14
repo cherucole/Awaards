@@ -31,7 +31,13 @@
          <p>Total ratings: {{post.ratings.count}}</p>
          {% for rating in post.ratings.all%}
  {% if forloop.counter is post.ratings.all.count %}
-                   <p> Score: {{rating.score}}</p>
+                   <p> Design: {{design_score}}</p>
+                            <p> Usability: {{rating.usability}}</p>
+                                     <p> Content: {{rating.content}}</p>
+
+
+                            <p> Score: {{rating.score}}</p>
+
  {% endif %}
 
          {% endfor %}

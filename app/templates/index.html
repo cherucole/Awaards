@@ -9,6 +9,8 @@
 <html lang="en">
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -23,7 +25,7 @@
 
 <body>
 <div class="container-fluid">
-  <h1 id="mainheading" style="text-align:center; color:#0d47a1" class="display-4"> Awaards</h1>
+  <h1 id="mainheading" style="text-align:center;" class="display-4"> Awaards</h1>
 
 
 
@@ -44,12 +46,12 @@
     </div>
 
       <div class="card-body">
-        <h5 class="card-title">{{post.name}}</h5>
+        <h5 id="text" class="card-title">{{post.name}}</h5>
         <!--<p class="card-text">{{post.description | safe}}</p>-->
-        <p style="margin-bottom:0;">By <a style="width:100%; padding-left:10px;" href="{% url 'profile' username=post.user_profile.username %}">
+        <p id="text" style="margin-bottom:0;">By <a style="width:100%; padding-left:10px;" href="{% url 'profile' username=post.user_profile.username %}">
 
                 <label>{{post.user_profile.username}}</label></a></p>
-                          <p style="margin-top:0;">Rating: {% for rating in post.ratings.all%}
+                          <p id="text" style="margin-top:0;">Rating: {% for rating in post.ratings.all%}
                           {% if forloop.counter is post.ratings.all.count %}
                                           {{rating.score}}
                           {% endif %}

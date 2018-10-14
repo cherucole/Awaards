@@ -157,7 +157,7 @@ def rate_post(request,pk):
             score=rating.score
             print ("last score=" + str(score))
 
-            return redirect('homepage')
+            return redirect('homepage', {"design_score":design_score})
     else:
         form = RatingsForm()
         return render(request,'index.html',{"user":current_user,"ratings_form":form})
