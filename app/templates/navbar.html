@@ -1,67 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {margin:0;}
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
-               <a href="{% url 'homepage' %}" style="color:black;"><i class="fab fa-instagram fa-3x " height="50px"></i></a>
+<div class="navbar fixed-top">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <div class="row" style="border-bottom: 1px solid grey">
+  <div >
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button w3-border-bottom" >Home</a>
+  <a href="{% url 'add_profile' %}" class="w3-bar-item w3-button w3-border-bottom">Add Profile</a>
+  <a href="{% url 'add' %}" class="w3-bar-item w3-button w3-border-bottom">Add Projects</a>
+  <a href="/logout" class="w3-bar-item w3-button w3-border-bottom">Log Out</a>
+</div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!-- Page Content -->
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-
-<li>
-    <a href="{% url 'homepage' %}"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2000px-Instagram_logo.svg.png" width="130px" height="50px" alt="INSTAGRAM" style="margin-right:4em;margin-left:2em;"></a>
-</li>
-
-      <li>
-                                      <a href="{% url 'add_profile' %}"> <img src="https://image.flaticon.com/icons/png/512/184/184312.png" width="45px" height="45px" alt="INSTAGRAM" style="color:black;">Add Profile</a>
-
-
-      </li>
-      <li>
-                            <a href="{% url 'add' %}"> <img src="https://static.thenounproject.com/png/809337-200.png" width="45px" height="45px" style="margin-right:2em;margin-left:1.5em;" alt="INSTAGRAM" style="color:black;"></a>
-
-
-      </li>
-
-
-
-
-
-
-
-    <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="post">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-            </ul>
-
-
-                  <a href="{% url 'my_profile' username=user %}"> <img src="https://dumielauxepices.net/sites/default/files/person-icons-android-712078-6629135.png" width="45px" height="45px" alt="INSTAGRAM" style="color:black;">{{user.username}}</a>
-
-                                  <a href="/logout"> <img src="https://www.shareicon.net/download/2015/10/17/657490_arrow.svg" width="45px" height="45px" style="margin-right:2em;margin-left:1.5em;" alt="INSTAGRAM" style="color:black;"></a>
-
-
+<div>
+  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
   </div>
-</nav>
 
-       {% block scripts %}
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+</div>
 
-    {% endblock %}
+
+</div>
+</div>
+
+
 </body>
 </html>
