@@ -24,18 +24,18 @@
 
                              <br>
 
-                          <p style="width:100%; padding-left:6px;">{{profile_info.user | upper}}</p>
+                          <p id="text" style="width:100%; padding-left:6px;">{{profile_info.user | upper}}</p>
 
 
                                 <div style="width:100%; padding-left:20px;padding-top:10px;" class="row">
 
 
 
-                 <p style="width:100%; padding-left:6px;">{{posts | length }} posts</p>
+                 <p  id="text" style="width:100%; padding-left:6px;">{{posts | length }} posts</p>
                                     <br>
-      <p style="margin-top:0px;">{{profile_info.bio | safe}}</p>
+      <p id="text" style="margin-top:0px;">{{profile_info.bio | safe}}</p>
 
-                                          <p style="margin-top:0px;">{{profile_info.contact | safe}}</p>
+                                          <p  id="text" style="margin-top:0px;">{{profile_info.contact | safe}}</p>
 
 
             </div>
@@ -56,7 +56,7 @@
 
 
   <div class="card border-secondary">
-    <label>{{post.name | safe}}</label></a>
+    <label id="text">{{post.name | safe}}</label>
 
 
 

@@ -2,6 +2,10 @@
 {% block content %}
 {{ block.super}}
 {% load bootstrap4 %}
+{% load staticfiles%}
+
+
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
   <title>Uploads</title>
   {{form.media}}

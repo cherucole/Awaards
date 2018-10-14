@@ -7,6 +7,11 @@ font-family: 'K2D', sans-serif;
 
 }
 
+
+#postimage{
+    overflow:hidden;
+
+}
 h1
 {
   font-family: 'Dancing Script', cursive;
