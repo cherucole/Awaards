@@ -9,9 +9,18 @@ font-family: 'K2D', sans-serif;
 
 
 #postimage{
+width:70%;
     overflow:hidden;
+border-width:1px;
+border-style:solid;
+border-color:white;
 
 }
+
+or style with this one line inside the curly braces : border: 2px solid white;
+
+
+
 h1
 {
   font-family: 'Dancing Script', cursive;
