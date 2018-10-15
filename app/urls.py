@@ -4,6 +4,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns=[
+    url(r'^api/posts/$', views.Postlist.as_view()),
+
     url(r'^search/', views.search_results, name='search_results'),
 
     url(r'^$', views.homepage, name='homepage'),
